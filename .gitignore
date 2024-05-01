@@ -1,0 +1,11 @@
+# Virtual environment
+/venv
+
+# Editor files
+.idea/
+__pycache__/
+
+# Database
+db.sqlite3
+
+

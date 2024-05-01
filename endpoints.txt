@@ -1,0 +1,16 @@
+# TODO ITEMS
+/api/todo-items/
+/api/todo-items/{id}  -  /api/todo-items/1
+
+
+# User Management(Create, Read, Update, Delete)
+/auth/users/
+/auth/users/me/
+/auth/users/confirm/
+/auth/users/resend_activation/
+/auth/users/set_password/
+/auth/users/reset_password/
+/auth/users/reset_password_confirm/
+/auth/users/set_username/
+/auth/users/reset_username/
+/auth/users/reset_username_confirm/
