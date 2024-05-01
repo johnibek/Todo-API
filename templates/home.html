@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All API endpoints</title>
+</head>
+<body>
+    <h1>API Endpoints</h1>
+    <p>All Todo items: <a href="/api/todo-items/">/api/todo-items/</a></p>
+
+    <p>Single Todo item: </p>
+    <ul>
+        {% for item in todo_items %}
+            <p><a href="/api/todo-items/{{ item.id }}">/api/todo-items/{{ item.id }}</a></p>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
