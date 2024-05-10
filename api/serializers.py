@@ -17,4 +17,4 @@ class ToDoSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'category', 'body', 'done', 'datetime']
 
     def get_datetime(self, todo_item: Todo):
-        return todo_item.datetime.strftime("%d-%m-%Y %I:%M:%S")
+        return todo_item.datetime.strftime("%d-%m-%Y %H:%M:%S %p")

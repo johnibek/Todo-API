@@ -10,3 +10,8 @@ db.sqlite3
 
 *.zip
 
+db-script.sh
+
+Dockerfile
+
+

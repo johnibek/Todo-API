@@ -22,7 +22,7 @@ class Todo(models.Model):
     user = models.ForeignKey(CustomUser , on_delete=models.CASCADE, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     body = models.CharField(max_length=250)
-    datetime = models.DateTimeField(default=timezone.now)
+    datetime = models.DateTimeField(auto_now_add=True)
     done = models.BooleanField(default=False)
 
     def __str__(self):

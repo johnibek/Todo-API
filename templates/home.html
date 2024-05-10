@@ -9,14 +9,18 @@
 </head>
 <body>
     <h1>API Endpoints</h1>
+    <p>Swagger: <a href="/swagger/schema/">swagger/schema/</a></p>
     <p>All Todo items: <a href="/api/todo-items/">/api/todo-items/</a></p>
+    <p>Categories <a href="/api/categories/">/api/categories/</a></p>
+
 
     <p>Single Todo item: </p>
     <ul>
         {% for item in todo_items %}
-            <p><a href="/api/todo-items/{{ item.id }}">/api/todo-items/{{ item.id }}</a></p>
+            <li><a href="/api/todo-items/{{ item.id }}">/api/todo-items/{{ item.id }}</a></li>
         {% endfor %}
     </ul>
+
 
 </body>
 </html>

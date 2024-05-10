@@ -1,9 +1,9 @@
 from django.http import Http404
-from .serializers import ToDoSerializer
+from .serializers import ToDoSerializer, CategorySerializer
 from rest_framework.decorators import api_view, permission_classes
-from .models import Todo, CustomUser
+from .models import Todo, CustomUser, Category
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from .permissions import AuthorEditPermission
 
@@ -47,3 +47,8 @@ def todo_detail_view(request, id):
         todo_item.delete()
         return Response({'message': "You have successfully deleted your todo item"}, status.HTTP_200_OK)
 
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    lookup_field = 'id'
+    permission_classes = [IsAuthenticated]
