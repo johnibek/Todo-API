@@ -4,4 +4,4 @@ drf-yasg
 djoser
 mysqlclient
 django-cors-headers
-
+drf-spectacular
