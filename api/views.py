@@ -50,7 +50,7 @@ from .permissions import AuthorEditPermission
 class TodoListAPIView(generics.ListCreateAPIView):
     queryset = Todo.objects.all()
     serializer_class = ToDoSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
         super().perform_create(serializer)
@@ -59,7 +59,7 @@ class TodoDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class = ToDoSerializer
     lookup_field = 'id'
-    permission_classes = [AuthorEditPermission]
+    permission_classes = [IsAuthenticated, AuthorEditPermission]
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
