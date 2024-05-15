@@ -8,11 +8,11 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
-    def save(self, *args, **kwargs):
-        user = super(CustomUser, self)
-        user.set_password(self.password)
-        user.save()
-        return user
+    # def save(self, *args, **kwargs):
+    #     user = super(CustomUser, self)
+    #     user.set_password(self.password)
+    #     user.save()
+    #     return user
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
