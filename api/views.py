@@ -8,7 +8,6 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticate
 from .permissions import AuthorEditPermission
 
 @api_view(['GET', 'POST'])
-@permission_classes([IsAuthenticatedOrReadOnly])
 def todo_list_view(request):
     if request.method == 'GET':
         todo_items = Todo.objects.all()
@@ -24,7 +23,7 @@ def todo_list_view(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated, AuthorEditPermission])
+@permission_classes([AuthorEditPermission])
 def todo_detail_view(request, id):
     try:
         todo_item = Todo.objects.get(id=id)
@@ -51,4 +50,3 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     lookup_field = 'id'
-    permission_classes = [IsAuthenticated]
